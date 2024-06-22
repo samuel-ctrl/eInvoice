@@ -25,35 +25,6 @@ const App = () => {
     setIsPdfView(true);
   };
 
-  // Function to format date to "24-Dec-22"
-  const formatCustomDate = (rawDate) => {
-    if (!rawDate) return ""; // Handle case where no date is selected
-
-    const dateObj = new Date(rawDate);
-    const day = dateObj.getDate();
-    const monthIndex = dateObj.getMonth();
-    const year = dateObj.getFullYear().toString().substr(-2);
-
-    const monthNames = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-
-    const monthName = monthNames[monthIndex];
-
-    return `${day}-${monthName}-${year}`;
-  };
-
   return (
     <div className="App d-flex justify-content-center align-items-start vh-100">
       {isPdfView ? (
@@ -73,7 +44,7 @@ const App = () => {
               </label>
               <input
                 type="text"
-                className="form-control form-control-sm w-25"
+                className="form-control form-control-sm w-50"
                 id="irn"
                 name="irn"
               />
@@ -85,7 +56,7 @@ const App = () => {
               </label>
               <input
                 type="number"
-                className="form-control form-control-sm w-25"
+                className="form-control form-control-sm w-50"
                 id="ackNo"
                 name="ackNo"
               />
@@ -97,7 +68,7 @@ const App = () => {
               </label>
               <input
                 type="date"
-                className="form-control form-control-sm w-25"
+                className="form-control form-control-sm w-50"
                 id="ackDate"
                 name="ackDate"
               />
