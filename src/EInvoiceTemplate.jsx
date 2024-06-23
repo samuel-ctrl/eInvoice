@@ -1,5 +1,6 @@
 import React from "react";
-import { Document, Page, View, Text, StyleSheet } from "@react-pdf/renderer";
+import { Document, Page, View, Text } from "@react-pdf/renderer";
+import moment from "moment";
 
 // CSS equivalent styles
 const cssStyles = {
@@ -84,7 +85,7 @@ const EInvoiceTemplate = ({ pdfData }) => {
                     fontWeight: "bold",
                   }}
                 >
-                  {pdfData?.ackDate || ""}
+                  {pdfData?.ackDate ? moment(pdfData?.ackDate).format("DD-MMM-YY") : ""}
                 </Text>
               </View>
             </View>
@@ -191,39 +192,3 @@ export default EInvoiceTemplate;
 //   </Text>
 // </View>
 // </View>
-
-{
-  /* <div class="container">
-<div class="invoice-header">
-  <h1>TAX INVOICE</h1>
-</div>
-<table class="invoice-table">
-  <tbody>
-    <tr>
-      <th>IRN</th>
-      <td>
-        0603cb4a83f4590a55dc69f19a06952ee7d1cea577bf46cfcfd-7960ad11d73e2
-      </td>
-    </tr>
-    <tr>
-      <th>Ack.No</th>
-      <td>152213540339585</td>
-    </tr>
-    <tr>
-      <th>Ack.Date</th>
-      <td>24-Dec-22</td>
-    </tr>
-  </tbody>
-</table>
-<div class="invoice-total">
-  <p>
-    Total Invoice Amount in Words: Four Lakh Twenty Four Thousand
-    Eight Hundred Only
-  </p>
-</div>
-<div>
-  <p>For Shree Abirami Engineering Works 2022-23</p>
-  <p>Authorised Signatory</p>
-</div>
-</div> */
-}
